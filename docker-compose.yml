@@ -9,3 +9,12 @@ services:
       - '6060:22'
     volumes:
       - /sftp/share:/home
+
+  sftp_retek:
+    build:
+      context: .
+      dockerfile: sftp.dockerfile
+    ports:
+      - '6161:22'
+    volumes:
+      - /sftp/retek:/home
