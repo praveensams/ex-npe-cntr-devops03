@@ -18,3 +18,13 @@ services:
       - '6161:22'
     volumes:
       - /sftp/retek:/home
+      - /sftp/data:/data
+
+  mule-sstage-sftp:
+    build:
+      context: .
+      dockerfile: sftp.dockerfile
+    ports:
+      - '2222:22'
+    volumes:
+      - /sftp/share1:/home
